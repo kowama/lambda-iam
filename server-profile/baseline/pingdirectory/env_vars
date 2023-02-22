@@ -14,11 +14,11 @@
 #
 
 # JVM Options
-export MAX_HEAP_SIZE=1024m
+export MAX_HEAP_SIZE=512m
 
 
 export USER_BASE_DN=dc=lambda,dc=corp
-export MAKELDIF_USERS=100
+export MAKELDIF_USERS=0
 
 #Keystore
 export KEYSTORE_FILE=/opt/out/instance/config/keystore.p12
@@ -35,6 +35,4 @@ export PF_ENGINE_PUBLIC_PORT_HTTPS=${PF_ENGINE_PUBLIC_PORT_HTTPS:=9031}
 export PF_ENGINE_PRIVATE_PORT_HTTPS=${PF_ENGINE_PRIVATE_PORT_HTTPS:=433}
 export PF_ADMIN_PUBLIC_BASEURL=https://pingfederate-admin.lambda.corp
 
-#
-# Matches the certificate alias found in config/keystore
-#
+export ENABLE_INSECURE_REMOTE_EXTENSIONS=true
