@@ -26,22 +26,27 @@ This repository contains Kubernetes cluster configuration for the Lambda.corp IA
     --namespace ingress-nginx --create-namespace
     ```
 
-3. Localhost DNS
+3. PingDevOps Secret
+
+   ```bash
+   pingctl k8s generate devops-secret | kubectl apply -f -
+    ```
+
+4. Localhost DNS
 
     ```bash
     CLUSTER_IP=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    NODE_PORT=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.spec.ports[0].nodePort}')
-    echo "${CLUSTER_IP} dev-pingaccess-admin.lambda.corp dev-pingaccess-engine.lambda.corp dev-pingauthorize.lambda.corp dev-pingauthorizepap.lambda.corp dev-pingdataconsole.lambda.corp dev-pingdelegator.lambda.corp dev-pingdirectory.lambda.corp dev-pingfederate-admin.lambda.corp dev-pingfederate-engine.lambda.corp dev-pingcentral.lambda.corp" | sudo tee -a /etc/hosts > /dev/null
+    echo "${CLUSTER_IP} pingaccess-admin.lambda.corp pingaccess-engine.lambda.corp pingauthorize.lambda.corp pingauthorizepap.lambda.corp pingdataconsole.lambda.corp pingdelegator.lambda.corp support.lambda.corp pingdirectory.lambda.corp pingfederate-admin.lambda.corp pingfederate-engine.lambda.corp auth.lambda.corp pingcentral.lambda.corp" | sudo tee -a /etc/hosts > /dev/null
     ```
 
-4. Install the chart
+5. Install the chart
 
     ```bash
     # Install the chart
-    helm upgrade --install dev pingidentity/ping-devops -f cluster-lambda.yaml -f ingress-lambda.yaml
+    helm upgrade --install dev pingidentity/ping-devops -f iam-cluster.yaml -f ingress.yaml
     ```
 
-5. Verify the installation
+6. Verify the installation
 
     ```bash
     # Verify the pods are running
@@ -51,7 +56,7 @@ This repository contains Kubernetes cluster configuration for the Lambda.corp IA
     kubectl get ingress
     ```
 
-6. Uninstall the chart
+7. Uninstall the chart
 
     ```bash
     # Uninstall the chart

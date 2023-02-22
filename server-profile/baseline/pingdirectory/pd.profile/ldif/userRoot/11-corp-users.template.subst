@@ -1,4 +1,4 @@
-branch: ou=autogen,ou=people,${USER_BASE_DN}
+branch: ou=people,${USER_BASE_DN}
 subordinateTemplate: person:${MAKELDIF_USERS}
 
 template: person
@@ -7,14 +7,12 @@ objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
-objectClass: pf-connected-identities
 givenName: <first>
 sn: <last>
 cn: {givenName} {sn}
 initials: {givenName:1}<random:chars:ABCDEFGHIJKLMNOPQRSTUVWXYZ:1>{sn:1}
-uid: autogen.user.<sequential:0>
-mail: {uid}@autogen.lambda.com
-pf-connected-identity: auth-source=pf-local-identity:user-id={uid}
+uid: corp.<sequential:0>
+mail: {uid}@lambda.com
 userPassword: 2FederateM0re
 telephoneNumber: <random:telephone>
 homePhone: <random:telephone>

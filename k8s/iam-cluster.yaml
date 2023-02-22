@@ -1,0 +1,81 @@
+############################################################
+# Ping Identity
+#
+############################################################
+
+# PingData Console
+pingdataconsole:
+  enabled: true
+  envs:
+    SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
+    SERVER_PROFILE_PATH: server-profile/baseline/pingdataconsole
+
+# PingDirectory Server
+pingdirectory:
+  enabled: true
+  envs:
+    SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
+    SERVER_PROFILE_PATH: server-profile/baseline/pingdirectory
+
+# PingDelegator(Delegated Admin)
+pingdelegator:
+  enabled: true
+  envs:
+    SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
+    SERVER_PROFILE_PATH: server-profile/baseline/pingdelegator
+  ingress:
+    hosts:
+      - host: pingdelegator._defaultDomain_
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: https
+      - host: support._defaultDomain_
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: https
+    tls:
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - pingdelegator._defaultDomain_
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - support._defaultDomain_
+
+# PingFederate Cluster
+# PingFederate Admin
+pingfederate-admin:
+  enabled: true
+  envs:
+    SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
+    SERVER_PROFILE_PATH: server-profile/baseline/pingfederate
+# PingFederate Engine
+pingfederate-engine:
+  enabled: true
+  envs:
+    SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
+    SERVER_PROFILE_PATH: server-profile/baseline/pingfederate
+  ingress:
+    hosts:
+      - host: pingfederate-engine._defaultDomain_
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: https
+      - host: auth._defaultDomain_
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: https
+    tls:
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - pingfederate-engine._defaultDomain_
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - auth._defaultDomain_

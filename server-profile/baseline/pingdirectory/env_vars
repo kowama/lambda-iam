@@ -12,17 +12,24 @@
 #   export NAME=${NAME:=myDefaultValue}  # Sets to string of "myDefaultValue"
 #   export NAME=${NAME:-OTHER_VAR}       # Sets ot value of OTHER_VAR variable
 #
-
 export USER_BASE_DN=dc=lambda,dc=corp
+export MAKELDIF_USERS=100
 
-export PD_DELEGATOR_PUBLIC_HOSTNAME=${PD_DELEGATOR_PUBLIC_HOSTNAME:=localhost}
-export PD_DELEGATOR_PUBLIC_PORT_HTTPS=${PD_DELEGATOR_PUBLIC_PORT_HTTPS:=6443}
+#Keystore
+KEYSTORE_FILE=/opt/out/instance/config/keystore.p12
+KEYSTORE_PIN_FILE=/opt/out/instance/config/keystore.pin
+KEYSTORE_TYPE=pkcs12
+CERTIFICATE_NICKNAME=server-cert
+
+export PD_DELEGATOR_PUBLIC_HOSTNAME=${PD_DELEGATOR_PUBLIC_HOSTNAME:=support.lambda.corp}
+export PD_DELEGATOR_PUBLIC_PORT_HTTPS=${PD_DELEGATOR_PUBLIC_PORT_HTTPS:=443}
 export PF_ENGINE_PRIVATE_HOSTNAME=${PF_ENGINE_PRIVATE_HOSTNAME:=pingfederate}
-export PF_ENGINE_PUBLIC_HOSTNAME=${PF_ENGINE_PUBLIC_HOSTNAME:=localhost}
+export PF_ENGINE_PUBLIC_HOSTNAME=${PF_ENGINE_PUBLIC_HOSTNAME:=auth.lambda.corp}
 export PF_ENGINE_PUBLIC_PORT_HTTPS=${PF_ENGINE_PUBLIC_PORT_HTTPS:=9031}
-export PF_ENGINE_PRIVATE_PORT_HTTPS=${PF_ENGINE_PRIVATE_PORT_HTTPS:=9031}
+export PF_ENGINE_PRIVATE_PORT_HTTPS=${PF_ENGINE_PRIVATE_PORT_HTTPS:=433}
+export PF_ADMIN_PUBLIC_BASEURL=https://pingfederate-admin.lambda.corp
 
 #
-# Matches the certificate alias found in config/keystore.p12
+# Matches the certificate alias found in config/keystore
 #
-export CERTIFICATE_NICKNAME=${CERTIFICATE_NICKNAME:=ping}
+export CERTIFICATE_NICKNAME=${CERTIFICATE_NICKNAME:=server-cert}

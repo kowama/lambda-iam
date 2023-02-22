@@ -3,7 +3,7 @@ global:
     PING_IDENTITY_ACCEPT_EULA: "YES"
   ingress:
     enabled: true
-    addReleaseNameToHost: subdomain
+    addReleaseNameToHost: none
     defaultDomain: "lambda.corp"
     defaultTlsSecret:
     annotations:
