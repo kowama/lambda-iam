@@ -18,7 +18,7 @@ export MAX_HEAP_SIZE=1024m
 
 
 export USER_BASE_DN=dc=lambda,dc=corp
-export MAKELDIF_USERS=0
+export MAKELDIF_USERS=100
 
 #Keystore
 export KEYSTORE_FILE=/opt/out/instance/config/keystore.p12
