@@ -14,7 +14,7 @@
 #
 
 # JVM Options
-export MAX_HEAP_SIZE=512m
+export MAX_HEAP_SIZE=1024m
 
 
 export USER_BASE_DN=dc=lambda,dc=corp
