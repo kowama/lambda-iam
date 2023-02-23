@@ -1,81 +1,81 @@
-dn: uid=user.0,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Brooke
-cn: Raeann Brooke
-givenName: Raeann
-uid: user.0
-mail: user.0@lambda.com
-userPassword: 2FederateM0re
-
-dn: uid=user.1,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Seawell
-cn: Esko Seawell
-givenName: Esko
-uid: user.1
-mail: user.1@lambda.com
-userPassword: 2FederateM0re
-
-dn: uid=user.2,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Tancordo
-cn: Sidonia Tancordo
-givenName: Sidonia
-uid: user.2
-mail: user.2@lambda.com
-userPassword: 2FederateM0re
-
-dn: uid=user.3,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Knio
-cn: Pierre-Marc Knio
-givenName: Pierre-Marc
-uid: user.3
-mail: user.3@lambda.com
-userPassword: 2FederateM0re
-
-dn: uid=user.4,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Psutka
-cn: Terza Psutka
-givenName: Terza
-uid: user.4
-mail: user.4@lambda.com
-userPassword: 2FederateM0re
-
-dn: uid=administrator,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: PingFederate
-cn: Administrator
-givenName: PingFederate
-uid: administrator
-userPassword: 2FederateM0re
-
-dn: uid=auditor,ou=People,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: PingFederate
-cn: Auditor
-givenName: PingFederate
-uid: auditor
-userPassword: 2FederateM0re
+#dn: uid=user.0,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: Brooke
+#cn: Raeann Brooke
+#givenName: Raeann
+#uid: user.0
+#mail: user.0@lambda.com
+#userPassword: 2FederateM0re
+#
+#dn: uid=user.1,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: Seawell
+#cn: Esko Seawell
+#givenName: Esko
+#uid: user.1
+#mail: user.1@lambda.com
+#userPassword: 2FederateM0re
+#
+#dn: uid=user.2,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: Tancordo
+#cn: Sidonia Tancordo
+#givenName: Sidonia
+#uid: user.2
+#mail: user.2@lambda.com
+#userPassword: 2FederateM0re
+#
+#dn: uid=user.3,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: Knio
+#cn: Pierre-Marc Knio
+#givenName: Pierre-Marc
+#uid: user.3
+#mail: user.3@lambda.com
+#userPassword: 2FederateM0re
+#
+#dn: uid=user.4,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: Psutka
+#cn: Terza Psutka
+#givenName: Terza
+#uid: user.4
+#mail: user.4@lambda.com
+#userPassword: 2FederateM0re
+#
+#dn: uid=administrator,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: PingFederate
+#cn: Administrator
+#givenName: PingFederate
+#uid: administrator
+#userPassword: 2FederateM0re
+#
+#dn: uid=auditor,ou=People,${USER_BASE_DN}
+#objectClass: top
+#objectClass: person
+#objectClass: organizationalPerson
+#objectClass: inetOrgPerson
+#sn: PingFederate
+#cn: Auditor
+#givenName: PingFederate
+#uid: auditor
+#userPassword: 2FederateM0re

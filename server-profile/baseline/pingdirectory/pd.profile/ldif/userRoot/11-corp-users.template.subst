@@ -1,4 +1,4 @@
-branch: ou=users,ou=people,${USER_BASE_DN}
+branch: ou=people,${USER_BASE_DN}
 subordinateTemplate: person:${MAKELDIF_USERS}
 
 template: person
