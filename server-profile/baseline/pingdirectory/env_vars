@@ -25,7 +25,7 @@ export KEYSTORE_FILE=/opt/out/instance/config/keystore.p12
 export KEYSTORE_PIN_FILE=/opt/out/instance/config/keystore.pin
 export KEYSTORE_TYPE=pkcs12
 export CERTIFICATE_NICKNAME=server-cert
-export LOCATION=AFRICA
+export LOCATION=Africa
 
 export PD_DELEGATOR_PUBLIC_HOSTNAME=${PD_DELEGATOR_PUBLIC_HOSTNAME:=support.lambda.corp}
 export PD_DELEGATOR_PUBLIC_PORT_HTTPS=${PD_DELEGATOR_PUBLIC_PORT_HTTPS:=443}
@@ -36,3 +36,6 @@ export PF_ENGINE_PRIVATE_PORT_HTTPS=${PF_ENGINE_PRIVATE_PORT_HTTPS:=433}
 export PF_ADMIN_PUBLIC_BASEURL=https://pingfederate-admin.lambda.corp
 
 export ENABLE_INSECURE_REMOTE_EXTENSIONS=true
+
+# Enable Verbose Logging
+export VERBOSE=true
