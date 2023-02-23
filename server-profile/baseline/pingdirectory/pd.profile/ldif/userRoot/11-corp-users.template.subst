@@ -1,4 +1,4 @@
-branch: ou=people,${USER_BASE_DN}
+branch: ou=users,ou=people,${USER_BASE_DN}
 subordinateTemplate: person:${MAKELDIF_USERS}
 
 template: person
@@ -11,7 +11,7 @@ givenName: <first>
 sn: <last>
 cn: {givenName} {sn}
 initials: {givenName:1}<random:chars:ABCDEFGHIJKLMNOPQRSTUVWXYZ:1>{sn:1}
-uid: corp.<sequential:0>
+uid: u.<sequential:0>
 mail: {uid}@lambda.com
 userPassword: 2FederateM0re
 telephoneNumber: <random:telephone>

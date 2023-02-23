@@ -38,4 +38,4 @@ export PF_ADMIN_PUBLIC_BASEURL=https://pingfederate-admin.lambda.corp
 export ENABLE_INSECURE_REMOTE_EXTENSIONS=true
 
 # Enable Verbose Logging
-export VERBOSE=true
+export VERBOSE=false
