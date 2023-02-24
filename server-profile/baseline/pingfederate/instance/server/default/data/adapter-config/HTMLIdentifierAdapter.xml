@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:AdapterConfiguration authnCtxClassRef="" isInheritAttributeSettings="false" isInheritAttributeMapping="false" maskOgnlValues="false" uniqueUserKeyField="uid" isInheritExtendedContractAttributes="false" name="HTMLIdentifierAdapter" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields>
+        <urn:Field name="Identifier Cookie Lifetime">30</urn:Field>
+        <urn:Field name="Allow Cancelling Identifier Selection">true</urn:Field>
+        <urn:Field name="Maximum Identifiers Count">5</urn:Field>
+        <urn:Field name="Identifier Selection Template">identifier.first.template.html</urn:Field>
+    </urn:Fields>
+    <urn:AdvancedFields>
+        <urn:Field name="Maximum Identifiers Count">5</urn:Field>
+        <urn:Field name="Identifier Selection Template">identifier.first.template.html</urn:Field>
+    </urn:AdvancedFields>
+    <urn:Tables/>
+    <urn:ExtendedContractAttributes>
+        <urn:AttributeName>uid</urn:AttributeName>
+    </urn:ExtendedContractAttributes>
+    <urn:ExtendedAttributesAdditionalProperties/>
+    <urn:UniqueKeyField>uid</urn:UniqueKeyField>
+    <urn:AttributeMapping>
+        <urn1:AttributeMap Name="uid" Type="Adapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>uid</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:AttributeMap Name="subject" Type="Adapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>subject</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:AttributeMap Name="domain" Type="Adapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>domain</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:AttributeSource Id="PingDirectoryDS" Description="PingDirectoryDS" Type="LDAP" DataSourceId="LDAP-5F869C1CBADFC41044AF102E152A71E5AF2ADC9E" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:Parameter Name="filter" Value="(|(uid=${subject})(mail=${subject}))"/>
+            <urn1:Parameter Name="search_base" Value="ou=people,dc=lambda,dc=corp"/>
+            <urn1:Parameter Name="search_attributes" Value="Subject DN,uid"/>
+            <urn1:Parameter Name="search_scope" Value="ONELEVEL_SCOPE"/>
+            <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+        </urn1:AttributeSource>
+        <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+    </urn:AttributeMapping>
+</urn:AdapterConfiguration>

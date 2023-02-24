@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:AuthnSelectionConfig lastModifiedMillis="1677276779739" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+    <urn:AuthnSelectionTrees>
+        <urn:AuthnSelectionTree treeId="HfsQplEeAOgNs7DhRPm6NSbWV" treeName="SSOViaSAML" disabled="false" authnApiApp="" handleFailuresLocally="false">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="SSOViaSAML" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="No">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="Yes">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">HTMLIdentifierAdapter</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                        <urn:InputIdMapping Type="Context">
+                            <urn1:ValueText xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">context.RequestedUser</urn1:ValueText>
+                        </urn:InputIdMapping>
+                        <urn:userIdAuthenticated>false</urn:userIdAuthenticated>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AuthnSourceKey type="ADAPTER">HTMLLoginAdapter</urn:AuthnSourceKey>
+                            <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                            <urn:InputIdMapping Type="Adapter" AttributeSourceId="HTMLIdentifierAdapter">
+                                <urn1:ValueText xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">subject</urn1:ValueText>
+                            </urn:InputIdMapping>
+                            <urn:userIdAuthenticated>false</urn:userIdAuthenticated>
+                        </urn:AstAction>
+                        <urn:AstChild context="Fail">
+                            <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        </urn:AstChild>
+                        <urn:AstChild context="Success">
+                            <urn:AstAction apcId="YGR9JIaaj232bZKn" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <urn:AttributeMapping>
+                                    <urn1:AttributeMap Name="uid" Type="Adapter" AttributeSourceId="HTMLLoginAdapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                        <urn1:ValueText>uid</urn1:ValueText>
+                                    </urn1:AttributeMap>
+                                    <urn1:AttributeMap Name="mail" Type="Adapter" AttributeSourceId="HTMLLoginAdapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                        <urn1:ValueText>mail</urn1:ValueText>
+                                    </urn1:AttributeMap>
+                                    <urn1:AttributeMap Name="displayName" Type="Adapter" AttributeSourceId="HTMLLoginAdapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                        <urn1:ValueText>displayName</urn1:ValueText>
+                                    </urn1:AttributeMap>
+                                    <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="HTMLLoginAdapter" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                        <urn1:ValueText>username</urn1:ValueText>
+                                    </urn1:AttributeMap>
+                                    <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                </urn:AttributeMapping>
+                            </urn:AstAction>
+                        </urn:AstChild>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+            <urn:treeDescription>Simple SSO via SAML</urn:treeDescription>
+        </urn:AuthnSelectionTree>
+    </urn:AuthnSelectionTrees>
+    <urn:DefaultAuthnSources/>
+</urn:AuthnSelectionConfig>
