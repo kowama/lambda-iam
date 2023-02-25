@@ -1,0 +1,26 @@
+# .suppress-container-warning
+#
+# NOTICE: Settings in this file will override values set at the
+#         image or orchestraton layers of the container.  Examples
+#         include variables that are specific to this server profile.
+#         Options include:
+#
+# ALWAYS OVERRIDE the value in the container
+#   NAME=VAL
+#
+# SET TO DEFAULT VALUE if not already set
+#   export NAME=${NAME:=myDefaultValue}  # Sets to string of "myDefaultValue"
+#   export NAME=${NAME:-OTHER_VAR}       # Sets to value of OTHER_VAR variable
+#
+export PD_DELEGATOR_PUBLIC_HOSTNAME=support.lambda.corp
+export PD_DELEGATOR_HTTP_PORT=80
+export PD_DELEGATOR_HTTPS_PORT=443 	
+export PF_ENGINE_PUBLIC_HOSTNAME=sso.lambda.corp
+export PF_ENGINE_PUBLIC_PORT=443
+export PF_DELEGATOR_CLIENTID=dadmin
+export PD_ENGINE_PUBLIC_HOSTNAME=directory.lambda.corp
+export PD_ENGINE_PUBLIC_PORT=443	
+export PD_DELEGATOR_TIMEOUT_LENGTH_MINS=30
+export PD_DELEGATOR_HEADER_BAR_LOGO=${SERVER_ROOT_DIR}/html/delegator/images/logo.png
+export PD_DELEGATOR_DADMIN_API_NAMESPACE=dadmin/v2
+export PD_DELEGATOR_PROFILE_SCOPE_ENABLED=true

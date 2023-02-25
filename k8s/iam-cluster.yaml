@@ -16,6 +16,27 @@ pingdirectory:
   envs:
     SERVER_PROFILE_URL: https://github.com/kowama/lambda-iam.git
     SERVER_PROFILE_PATH: server-profile/baseline/pingdirectory
+  ingress:
+    hosts:
+      - host: directory._defaultDomain_
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
+      - host: pingdirectory._defaultDomain_
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
+    tls:
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - directory._defaultDomain_
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - pingdirectory._defaultDomain_
 
 # PingDelegator(Delegated Admin)
 pingdelegator:
@@ -27,16 +48,16 @@ pingdelegator:
     hosts:
       - host: pingdelegator._defaultDomain_
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            serviceName: https
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
       - host: support._defaultDomain_
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            serviceName: https
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
     tls:
       - secretName: _defaultTlsSecret_
         hosts:
@@ -62,16 +83,22 @@ pingfederate-engine:
     hosts:
       - host: pingfederate-engine._defaultDomain_
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            serviceName: https
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
       - host: auth._defaultDomain_
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            serviceName: https
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
+      - host: sso._defaultDomain_
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: https
     tls:
       - secretName: _defaultTlsSecret_
         hosts:
@@ -79,3 +106,6 @@ pingfederate-engine:
       - secretName: _defaultTlsSecret_
         hosts:
           - auth._defaultDomain_
+      - secretName: _defaultTlsSecret_
+        hosts:
+          - sso._defaultDomain_

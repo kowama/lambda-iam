@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor cacheDuration="PT1440M" entityID="https://auth.lambda.corp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:sid="urn:sourceid.org:saml2:local-metadata-extension:v2">
+<EntityDescriptor cacheDuration="PT1440M" entityID="https://sso.lambda.corp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:sid="urn:sourceid.org:saml2:local-metadata-extension:v2">
     <!--This block contains Ping's proprietary endpoints-->
     <Extensions>
-        <sid:SourceIDExtension BaseURL="https://auth.lambda.corp" ClientCertChainSSLHeaderName="" ClientCertSSLHeaderName="" ClientIpHeaderIndex="last" ConfirmIdpSlo="false" CustomGlobalHttpHeaderName="" DataStoreValidationInterval="300" DisableAutomaticConnectionValidation="false" ForwardedHostHeaderIndex="last" ForwardedHostHeaderName="" MetadataSigningAlgorithm="" MetadataSigningKeyAlias="" MetadataSigningKeyMD5Fingerprint="" ProxyTerminatesHttpsConns="false" RequestHeaderNameForCorrelationId="" Saml1xId="https://auth.lambda.corp" Saml1xSrcId="" WsFedID="">
+        <sid:SourceIDExtension BaseURL="https://sso.lambda.corp" ClientCertChainSSLHeaderName="" ClientCertSSLHeaderName="" ClientIpHeaderIndex="last" ConfirmIdpSlo="false" CustomGlobalHttpHeaderName="" DataStoreValidationInterval="300" DisableAutomaticConnectionValidation="false" ForwardedHostHeaderIndex="last" ForwardedHostHeaderName="" MetadataSigningAlgorithm="" MetadataSigningKeyAlias="" MetadataSigningKeyMD5Fingerprint="" ProxyTerminatesHttpsConns="false" RequestHeaderNameForCorrelationId="" Saml1xId="https://sso.lambda.corp" Saml1xSrcId="" WsFedID="">
             <sid:LocalPathsDescriptor ResumePathPrefix="/resume" Suffix=".ping">
                 <sid:IDPLocalPaths>
                     <!--This endpoint is used by an IdP application to ask

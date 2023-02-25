@@ -36,7 +36,7 @@ This repository contains Kubernetes cluster configuration for the Lambda.corp IA
 
     ```bash
     CLUSTER_IP=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    echo "${CLUSTER_IP} pingaccess-admin.lambda.corp pingaccess-engine.lambda.corp pingauthorize.lambda.corp pingauthorizepap.lambda.corp pingdataconsole.lambda.corp pingdelegator.lambda.corp support.lambda.corp pingdirectory.lambda.corp pingfederate-admin.lambda.corp pingfederate-engine.lambda.corp auth.lambda.corp pingcentral.lambda.corp" | sudo tee -a /etc/hosts > /dev/null
+    echo "${CLUSTER_IP} pingaccess-admin.lambda.corp pingaccess-engine.lambda.corp pingauthorize.lambda.corp pingauthorizepap.lambda.corp pingdataconsole.lambda.corp pingdelegator.lambda.corp support.lambda.corp pingdirectory.lambda.corp pingfederate-admin.lambda.corp pingfederate-engine.lambda.corp sso.lambda.corp sso.lambda.corp pingcentral.lambda.corp" | sudo tee -a /etc/hosts > /dev/null
     ```
 
 5. Install the chart
