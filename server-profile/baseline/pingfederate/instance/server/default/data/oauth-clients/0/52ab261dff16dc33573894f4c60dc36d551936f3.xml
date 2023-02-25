@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:Clients xmlns:urn="urn:pingidentity.com:pf:oauth:client">
-    <urn:Client client_id="dadmin" name="dadmin" logo="" persistentGrantExpirationTime="0" enabled="true" lastModified="2023-02-25T14:15:02.360Z" creationTime="2023-02-25T14:15:02.360Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="NONE" enforceOneTimeJWT="false" isRequireSignedRequest="false">
+    <urn:Client client_id="dadmin" name="dadmin" logo="" persistentGrantExpirationTime="0" enabled="true" lastModified="2023-02-25T15:21:56.241Z" creationTime="2023-02-25T14:15:02.360Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="NONE" enforceOneTimeJWT="false" isRequireSignedRequest="false">
         <urn:Description>Delegated Admin OAuth Client</urn:Description>
+        <urn:Grant type="implicit"/>
         <urn:Grant type="authorization_code"/>
-        <urn:RedirectUri>https://support.lambda.corp:6443/delegator/*</urn:RedirectUri>
+        <urn:RedirectUri>https://support.lambda.corp/delegator/*</urn:RedirectUri>
         <urn:SupplementalInfo key="CREATION_TIME" value="1677334502360"/>
         <urn:SupplementalInfo key="DEVICE_FLOW_SETTING" value="SERVER_DEFAULT"/>
         <urn:SupplementalInfo key="DEFAULT_ATM_ID" value="JWTAccessTokenMgt"/>
@@ -17,6 +18,7 @@
         <urn:SupplementalInfo key="PING_ACCESS_LOGOUT_CAPABLE" value="false"/>
         <urn:SupplementalInfo key="ALLOW_AUTHENTICATION_API_INIT" value="false"/>
         <urn:SupplementalInfo key="REQUIRE_PROOF_KEY_FOR_CODE_EXCHANGE" value="true"/>
+        <urn:SupplementalInfo key="SECONDARY_SECRETS" value="eyJzZWNyZXRzIjpbXX0="/>
         <urn:SupplementalInfo key="RESTRICT_TO_DEFAULT_ATM" value="false"/>
         <urn:SupplementalInfo key="ACCESS_SESSION_REVOCATION_API" value="false"/>
         <urn:SupplementalInfo key="PERSISTENT_GRANT_IDLE_TIMEOUT_TYPE" value="SERVER_DEFAULT"/>

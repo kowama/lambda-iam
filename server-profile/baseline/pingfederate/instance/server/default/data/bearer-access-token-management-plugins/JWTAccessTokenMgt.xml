@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AccessTokenManagerConfiguration inheritAccessControlSettings="false" inheritSelectionSettings="false" inheritSessionValidationSettings="false" restrictClients="false" includeSessionIdentifier="true" checkSessionRevocationStatus="true" checkValidAuthnSession="true" updateAuthnSessionActivity="true" defaultSubjectAttribute="" isInheritExtendedContractAttributes="false" name="JWTAccessTokenMgt" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+<urn:AccessTokenManagerConfiguration inheritAccessControlSettings="false" inheritSelectionSettings="false" inheritSessionValidationSettings="false" restrictClients="false" includeSessionIdentifier="true" checkSessionRevocationStatus="true" checkValidAuthnSession="true" updateAuthnSessionActivity="true" defaultSubjectAttribute="sub" isInheritExtendedContractAttributes="false" name="JWTAccessTokenMgt" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
         <urn:Field name="Token Lifetime">120</urn:Field>
         <urn:Field name="Use Centralized Signing Key">false</urn:Field>
         <urn:Field name="JWS Algorithm">RS256</urn:Field>
-        <urn:Field name="Active Symmetric Key ID"/>
-        <urn:Field name="Active Signing Certificate Key ID">key-0001</urn:Field>
+        <urn:Field name="Active Symmetric Key ID">skey-001</urn:Field>
+        <urn:Field name="Active Signing Certificate Key ID">akey-0001</urn:Field>
         <urn:Field name="JWE Algorithm"/>
         <urn:Field name="JWE Content Encryption Algorithm"/>
-        <urn:Field name="Active Symmetric Encryption Key ID"/>
+        <urn:Field name="Active Symmetric Encryption Key ID">skey-001</urn:Field>
         <urn:Field name="Asymmetric Encryption Key"/>
         <urn:Field name="Asymmetric Encryption JWKS URL"/>
         <urn:Field name="Enable Token Revocation">false</urn:Field>
@@ -54,10 +54,16 @@
         <urn:Field name="Type Header Value"/>
     </urn:AdvancedFields>
     <urn:Tables>
-        <urn:Table name="Symmetric Keys"/>
+        <urn:Table name="Symmetric Keys">
+            <urn:Row defaultRow="false">
+                <urn:Field name="Key ID">skey-001</urn:Field>
+                <urn:Field name="Key">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiUWVzOVR5eTV5WiIsInZlcnNpb24iOiIxMS4yLjIuMCJ9..pnz0QqN2rc4BvzYw2MDN2w.htC9qzpXCq3j8uib5HwR0e9rhwKC-KyTGGquTOIL65UnY4XnWMH-LVw9Y6qRDORSmrPTVVeeJTwtXUM7xhVmwDF3zi3mUxdcsBpAQzx5RzAK7Zjw0CQl7fmFzkkP7Vof7NQ2ViSGo8ACR4LmsP0Xfw.gbfAh7iAc6mba7hTz5GF3Q</urn:Field>
+                <urn:Field name="Encoding">b64u</urn:Field>
+            </urn:Row>
+        </urn:Table>
         <urn:Table name="Certificates">
             <urn:Row defaultRow="false">
-                <urn:Field name="Key ID">key-0001</urn:Field>
+                <urn:Field name="Key ID">akey-0001</urn:Field>
                 <urn:Field name="Certificate">6m5726kj618aoc5sfexf6z6la</urn:Field>
             </urn:Row>
         </urn:Table>

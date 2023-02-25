@@ -18,8 +18,8 @@
 export PF_ENGINE_PUBLIC_HOSTNAME=sso.lambda.corp
 export PF_ENGINE_PUBLIC_PORT=443
 export PF_DELEGATOR_CLIENTID=dadmin
-#export PD_ENGINE_PUBLIC_HOSTNAME=directory.lambda.corp
-#export PD_ENGINE_PUBLIC_PORT=443	
+export PD_ENGINE_PUBLIC_HOSTNAME=directory.lambda.corp
+export PD_ENGINE_PUBLIC_PORT=443	
 export PD_DELEGATOR_TIMEOUT_LENGTH_MINS=30
 export PD_DELEGATOR_HEADER_BAR_LOGO=${SERVER_ROOT_DIR}/html/delegator/images/logo.png
 export PD_DELEGATOR_PROFILE_SCOPE_ENABLED=true
