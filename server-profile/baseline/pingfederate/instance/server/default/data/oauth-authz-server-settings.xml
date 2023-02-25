@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:OAuthConfig enableOAuth="true" authzCodeLength="30" authzCodeTimeout="60" restrictPlainPKCE="false" includeIssuerInAuthzResponse="false" rollRefreshTokens="false" refreshTokenRollingGracePeriod="0" rollingInterval="0" refreshTokenLength="42" atmIdForOAuthGrantManagement="" scopeForOAuthGrantManagement="" globalPersistentGrantExpirationTime="-1" globalPersistentGrantExpirationTimeUnit="d" globalPersistentGrantIdleTimeout="30" globalPersistentGrantIdleTimeoutTimeUnit="d" tokenEndpointBaseUrl="" userAuthzUrl="" registeredAuthzPath="" pendingAuthzTimeout="600" bypassActivationCodeConfirmation="false" devicePollingInterval="5" activationCodeCheckMode="AFTER_AUTHENTICATION" clientSecretRetentionPeriod="0" authzConsentSetting="" externalConsentAdapterId="" returnedScopeAttributeName="" returnedAuthorizationDetailsAttributeName="" allowUnidentifiedClientROCreds="false" allowUnidentifiedClientExtensionGrants="false" jwtSecuredAuthorizationResponseModeLifetime="600" xmlns:urn="urn:pingidentity.com:pf:oauth:conf">
+<urn:OAuthConfig enableOAuth="true" authzCodeLength="30" authzCodeTimeout="60" restrictPlainPKCE="false" includeIssuerInAuthzResponse="false" rollRefreshTokens="false" refreshTokenRollingGracePeriod="0" rollingInterval="0" refreshTokenLength="42" atmIdForOAuthGrantManagement="" scopeForOAuthGrantManagement="" globalPersistentGrantExpirationTime="-1" globalPersistentGrantExpirationTimeUnit="d" globalPersistentGrantIdleTimeout="30" globalPersistentGrantIdleTimeoutTimeUnit="d" tokenEndpointBaseUrl="" userAuthzUrl="" registeredAuthzPath="" pendingAuthzTimeout="600" bypassActivationCodeConfirmation="false" devicePollingInterval="5" activationCodeCheckMode="AFTER_AUTHENTICATION" clientSecretRetentionPeriod="0" authzConsentSetting="" externalConsentAdapterId="" returnedScopeAttributeName="" returnedAuthorizationDetailsAttributeName="" parTimeout="60" parRefLength="24" parStatus="ENABLED" allowUnidentifiedClientROCreds="false" allowUnidentifiedClientExtensionGrants="false" jwtSecuredAuthorizationResponseModeLifetime="600" xmlns:urn="urn:pingidentity.com:pf:oauth:conf">
+    <urn:UserKeyToAccessTokenMapping contextId="authz_req|apc.YGR9JIaaj232bZKn" tokenManagerId="JWTAccessTokenMgt">
+        <urn1:AttributeMap Name="sub" Type="Authentication Policy Contract" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>apc.subject</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+    </urn:UserKeyToAccessTokenMapping>
+    <urn:ApcToUserKeyMapping sourcePluginId="YGR9JIaaj232bZKn">
+        <urn1:AttributeMap Name="USER_NAME" Type="Authentication Policy Contract" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>displayName</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:AttributeMap Name="USER_KEY" Type="Authentication Policy Contract" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:ValueText>uid</urn1:ValueText>
+        </urn1:AttributeMap>
+        <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+    </urn:ApcToUserKeyMapping>
     <urn:ReuseExistingPersistentGrantForGrant>implicit</urn:ReuseExistingPersistentGrantForGrant>
+    <urn:allowedOrigins>https://support.lambda.corp:6443</urn:allowedOrigins>
 </urn:OAuthConfig>

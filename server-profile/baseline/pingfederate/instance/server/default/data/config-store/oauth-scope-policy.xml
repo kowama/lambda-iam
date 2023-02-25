@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
-    <con:item name="lastUpdated">1677272304335</con:item>
-    <con:map name="scope-descriptions"/>
+    <con:item name="lastUpdated">1677334096440</con:item>
+    <con:map name="scope-descriptions">
+        <con:item name="openid">Openid standard</con:item>
+        <con:item name="profile">OpenID user profile</con:item>
+    </con:map>
     <con:list name="dynamic-common-scopes"/>
     <con:map name="scope-group-descriptions"/>
     <con:map name="scope-group-mappings"/>
-    <con:map name="exclusive-scope-descriptions"/>
+    <con:map name="exclusive-scope-descriptions">
+        <con:item name="urn:pingidentity:directory-delegated-admin">Delegated Admin :: urn:pingidentity:directory-delegated-admin</con:item>
+    </con:map>
     <con:list name="dynamic-exclusive-scopes"/>
     <con:map name="exclusive-scope-group-descriptions"/>
     <con:map name="exclusive-scope-group-mappings"/>

@@ -1,2 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:OpenIdConnectProviderPolicy enabled="true" trackUserSessionsForLogout="false" xmlns:urn="urn:pingidentity.com:pf:openid:connect:idp:policy"/>
+<urn:OpenIdConnectProviderPolicy enabled="true" defaultPolicyGroupId="DefaultOIDCPolicy" trackUserSessionsForLogout="false" xmlns:urn="urn:pingidentity.com:pf:openid:connect:idp:policy">
+    <urn:ProviderPolicyGroup policyId="DefaultOIDCPolicy" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" returnIdTokenOnRefreshGrant="false" reissueIdTokenHybridFlows="false" policyName="DefaultOIDCPolicy" accessTokenManagerId="JWTAccessTokenMgt">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="sub" Type="Token" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                <urn1:ValueText>sub</urn1:ValueText>
+            </urn1:AttributeMap>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap/>
+        <urn:attributeContractInclusionMap/>
+        <urn:ExtendedAttributesAdditionalProperties/>
+    </urn:ProviderPolicyGroup>
+    <urn:ProviderPolicyGroup policyId="DelegatedAdminOIDCPolicy" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" returnIdTokenOnRefreshGrant="false" reissueIdTokenHybridFlows="false" policyName="DelegatedAdminOIDCPolicy" accessTokenManagerId="JWTAccessTokenMgt">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="sub" Type="Token" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                <urn1:ValueText>sub</urn1:ValueText>
+            </urn1:AttributeMap>
+            <urn1:AttributeMap Name="name" Type="Token" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                <urn1:ValueText>sub</urn1:ValueText>
+            </urn1:AttributeMap>
+            <urn1:AttributeSource Id="PingDirectoryDS" Description="PingDirectoryDS" Type="LDAP" DataSourceId="LDAP-5F869C1CBADFC41044AF102E152A71E5AF2ADC9E" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                <urn1:Parameter Name="filter" Value="(|(uid= ${sub})(mail=${sub}))"/>
+                <urn1:Parameter Name="search_base" Value="ou=people,dc=lambda,dc=corp"/>
+                <urn1:Parameter Name="search_attributes" Value="cn,Subject DN"/>
+                <urn1:Parameter Name="search_scope" Value="ONELEVEL_SCOPE"/>
+                <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+            </urn1:AttributeSource>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap>
+            <urn:item>
+                <urn:key>openid</urn:key>
+                <urn:value>name</urn:value>
+            </urn:item>
+            <urn:item>
+                <urn:key>profile</urn:key>
+                <urn:value>name</urn:value>
+            </urn:item>
+        </urn:scopeAttributesMap>
+        <urn:attributeContractInclusionMap/>
+        <urn:ExtendedAttributesAdditionalProperties/>
+    </urn:ProviderPolicyGroup>
+</urn:OpenIdConnectProviderPolicy>
