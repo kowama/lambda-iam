@@ -7,6 +7,9 @@
             <urn:Row defaultRow="false">
                 <urn:Field name="Connection">DummySSO</urn:Field>
             </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="Connection">https://sso.lambda.corp</urn:Field>
+            </urn:Row>
         </urn:Table>
     </urn:Tables>
     <urn:ExtendedAttributesAdditionalProperties/>

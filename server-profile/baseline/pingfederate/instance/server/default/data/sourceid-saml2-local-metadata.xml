@@ -35,7 +35,8 @@
                 </sid:SPLocalPaths>
             </sid:LocalPathsDescriptor>
             <sid:ApplicationURLs/>
-            <sid:IdpDiscovery CommonDomainServer="false" IdPCommonDomainClient="false" SPCommonDomainClient="false" WriteCookiePath="/writecookie.cdc" ReadCookiePath="/readcookie.cdc">
+            <sid:UrlToAdapterMap Url="https://sso.lambda.corp/AgentlessSPSample/app" TargetType="ADAPTER" AdapterInstance="RefIDAdapter"/>
+            <sid:IdpDiscovery CommonDomainServer="false" IdPCommonDomainClient="false" ReadCookiePath="/readcookie.cdc" SPCommonDomainClient="false" WriteCookiePath="/writecookie.cdc">
                 <sid:CommonDomainClient CommonDomainServiceBaseUrl=""/>
                 <sid:CommonDomainService CommonDomain="" CookieLifeDays="365"/>
             </sid:IdpDiscovery>

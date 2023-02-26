@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
-    <con:list name="whitelist"/>
+    <con:list name="whitelist">
+        <con:ListItem>sso.lambda.corp||true|true|true|true|true|false</con:ListItem>
+    </con:list>
     <con:item name="enable-validation">true</con:item>
     <con:item name="enable-validation-target-resource-slo">true</con:item>
     <con:item name="enable-validation-inerror-resource">true</con:item>
