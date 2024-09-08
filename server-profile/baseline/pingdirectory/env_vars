@@ -25,7 +25,7 @@ export KEYSTORE_FILE=/opt/out/instance/config/keystore.p12
 export KEYSTORE_PIN_FILE=/opt/out/instance/config/keystore.pin
 export KEYSTORE_TYPE=pkcs12
 export CERTIFICATE_NICKNAME=server-cert
-export LOCATION=Africa
+export LOCATION=EU
 
 export PD_DELEGATOR_PUBLIC_HOSTNAME=support.lambda.corp
 export PD_DELEGATOR_PUBLIC_PORT_HTTPS=443
