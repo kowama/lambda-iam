@@ -1,0 +1,5 @@
+# .Gitignore file for the project
+
+# Ignore all .zip files
+*.zip
+puppet/ldap-pp/files/sources/PingDirectory.zip

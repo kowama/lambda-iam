@@ -1,0 +1,9 @@
+# Allow the ping user to have unlimited processes and files
+*          soft    nproc     65536
+*          soft    nofile    65536
+*          hard    nproc     65536
+*          hard    nofile    65536
+root       soft    nproc     unlimited
+root       soft    nofile    unlimited
+ping       soft    nproc     unlimited
+ping       soft    nofile    unlimited

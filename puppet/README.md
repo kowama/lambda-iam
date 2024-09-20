@@ -4,6 +4,11 @@ Lambda Corp IAM Directory puppet module.
 
 ## Prerequisites
 
+### Files
+
+- Ensure `puppet/ldap-pp/files/sources/PingDirectory.zip` contains the latest zip file of PingDirectory
+- Ensure `puppet/ldap-pp/files/Pingdirectory.lic` is updated with the license key
+
 ### Master Node
 
 - Setup Puppet Master Node on RHEL 9 based system
@@ -53,9 +58,7 @@ Lambda Corp IAM Directory puppet module.
 
   ```bash
   sudo mkdir -p /etc/puppetlabs/code/environments/production/modules/iam/
-  sudo mkdir -p /opt/puppetlabs/puppet/modules/iam/
-  sudo cp -r puppet/* /etc/puppetlabs/code/environments/production/modules/iam/
-  sudo cp -r puppet/* /opt/puppetlabs/puppet/modules/iam/
+  sudo cp -r ldap-pp/* /etc/puppetlabs/code/environments/production/modules/iam/
   ```
 
 - create site.pp file in /etc/puppetlabs/code/environments/production/manifests/site.pp
