@@ -2,4 +2,7 @@
 
 # Ignore all .zip files
 *.zip
-puppet/ldap-pp/files/sources/PingDirectory.zip
+# Ignore all .tar.gz files
+*.tar.gz
+# Ignore .vagrant directory
+.vagrant/
