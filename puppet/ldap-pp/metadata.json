@@ -1,9 +1,0 @@
-{
-  "source": "https://github.com/kowama/lambda-iam/puppet",
-  "name": "iam-pingdirectory",
-  "version": "1.0.0",
-  "author": "Kowama",
-  "license": "MIT",
-  "summary": "Simple module to manage PingDirectory Servers",
-  "dependencies": []
-}
